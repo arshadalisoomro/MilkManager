@@ -17,6 +17,7 @@
 package pk.edu.usindh.im.milkmanager.view
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -142,7 +143,10 @@ class MainActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_about -> {
+                startActivity(Intent(this@MainActivity, AboutActivity::class.java))
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
